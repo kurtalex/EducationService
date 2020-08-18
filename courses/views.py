@@ -5,6 +5,9 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.shortcuts import redirect, get_object_or_404
 from django.views.generic.base import TemplateResponseMixin, View
+from django.forms.models import modelform_factory
+from django.apps import apps
+from .models import Module, Content
 from .forms import ModuleFormSet
 from .models import Course
 
@@ -100,3 +103,101 @@ class CourseModuleUpdateView(TemplateResponseMixin, View):
             return redirect('manage_course_list')
         return self.render_to_response({'course': self.course,
                                         'formset': formset})
+
+
+"""
+ContentCreateUpdateView - позволит создавать и редактировать содержимое различных типов
+get_model() – возвращает класс модели по переданному имени. Допусти-
+мые значения – Text, Video, Image и File
+get_form() – создает форму в зависимости от типа содержимого с помощью
+функции modelform_factory().
+dispatch() – получает приведенные ниже данные из запроса и создает
+соответствующие объекты модуля, модели содержимого
+get() – извлекает из GET-параметров запроса данные. Формирует модель-
+ные формы для объектов Text, Video, Image или File, если объект редакти-
+руется, т. е. указан self.obj. В противном случае мы отображаем пустую
+форму для создания объекта;
+post() – обрабатывает данные POST-запроса, для чего создает модель-
+ную форму и валидирует ее. Если форма заполнена корректно, создает
+новый объект, указав текущего пользователя, request.user, владельцем.
+Если в запросе был передан ID, значит, объект изменяют, а не создают.
+"""
+
+
+class ContentCreateUpdateView(TemplateResponseMixin, View):
+    module = None
+    model = None
+    obj = None
+
+    template_name = 'courses/manage/content/form.html'
+
+    def get_model(self, model_name):
+        if model_name in ['text', 'video', 'image', 'file']:
+            return apps.get_model(app_label='courses', model_name=model_name)
+
+        return None
+
+    def get_form(self, model, *args, **kwargs):
+        Form = modelform_factory(model, exclude=['owner',
+                                                 'order',
+                                                 'created',
+                                                 'updated'])
+        return Form(*args, **kwargs)
+
+    def dispatch(self, request, module_id, model_name, id=None):
+        self.module = get_object_or_404(Module,
+                                        id=module_id,
+                                        course__owner=request.user)
+        self.model = self.get_model(model_name)
+        if id:
+            self.obj = get_object_or_404(self.model,
+                                         id=id,
+                                         owner=request.user)
+        return super(ContentCreateUpdateView,
+                     self).dispatch(request, module_id, model_name, id)
+
+    def get(self, request, module_id, model_name, id=None):
+        form = self.get_form(self.model, instance=self.obj)
+        return self.render_to_response({'form': form, 'object': self.obj})
+
+    def post(self, request, module_id, model_name, id=None):
+        form = self.get_form(self.model,
+                             instance=self.obj,
+                             data=request.POST,
+                             files=request.FILES)
+        if form.is_valid():
+            obj = form.save(commit=False)
+            obj.owner = request.user
+            obj.save()
+            if not id:
+                # Создаем новый объект.
+                Content.objects.create(module=self.module, item=obj)
+            return redirect('module_content_list', self.module.id)
+        return self.render_to_response({'form': form, 'object': self.obj})
+
+
+class ContentDeleteView(View):
+    def post(self, request, id):
+        content = get_object_or_404(Course,
+                                    id=id,
+                                    module__course__owner=request.user)
+        module = content.module
+        content.item.delete()
+        content.delete()
+        return redirect('module_content_list', module.id)
+
+
+"""
+ModuleContentListView - получает из базы данных модуль по
+переданному ID и генерирует для него страницу подробностей.
+"""
+
+
+class ModuleContentListView(TemplateResponseMixin, View):
+    template_name = 'courses/manage/module/content_list.html'
+
+    def get(self, request, module_id):
+        module = get_object_or_404(Module,
+                                   id=module_id,
+                                   course__owner=request.user)
+        return self.render_to_response({'module': module})
