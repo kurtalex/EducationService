@@ -8,9 +8,13 @@ from django.views.generic.base import TemplateResponseMixin, View
 from django.forms.models import modelform_factory
 from django.apps import apps
 from braces.views import CsrfExemptMixin, JsonRequestResponseMixin
+from django.db.models import Count
+from django.views.generic.detail import DetailView
+
 from .models import Module, Content
 from .forms import ModuleFormSet
 from .models import Course
+from .models import Subject
 
 # class ManageCourseListView(ListView):
 #     model = Course
@@ -225,3 +229,42 @@ class ContentOrderView(CsrfExemptMixin, JsonRequestResponseMixin, View):
                                    module__course__owner=request.user).update(order=order)
 
         return self.render_json_response({'saved': 'OK'})
+
+
+"""Отображение курсов для студентов"""
+
+
+class CourseListView(TemplateResponseMixin, View):
+    """
+    При обработке запроса на получение курсов мы выполняем следующие действия:
+    1) получаем список всех предметов, добавляя количество курсов по каждому из них.
+     Для этого применяем метод annotate() QuerySetʼа и функцию агрегации Count();
+    2) получаем все доступные курсы, включая количество модулей для каждого из них;
+    3) если в URLʼе задан слаг предмета, получаем объект предмета и фильтруем список курсов по нему;
+    4) для формирования результата используем метод render_to_response() из примеси TemplateResponseMixin.
+    """
+    model = Course
+    template_name = 'courses/course/list.html'
+
+    def get(self, request, subject=None):
+        subjects = Subject.objects.annotate(total_courses=Count('courses'))
+        courses = Course.objects.annotate(total_modules=Count('modules'))
+        if subject:
+            subject = get_object_or_404(Subject, slug=subject)
+            courses = courses.filter(subject=subject)
+
+        return self.render_to_response({'subjects': subjects,
+                                        'subject': subject,
+                                        'courses': courses})
+
+
+class CourseDetailView(DetailView):
+    """
+    Указаны два атрибута: model и template_name. При обработке запроса Django ожидает,
+    что в URL будет передан идентификатор (pk) объекта, по которому его можно получить
+    Затем формирует результат в виде HTML-страницы, сгенерированной из шаблона с именем
+    template_name. В контекст шаблона добавляется переменная - объект модели.
+
+     """
+    model = Course
+    template_name = 'courses/course/detail.html'
