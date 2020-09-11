@@ -15,6 +15,7 @@ from .models import Module, Content
 from .forms import ModuleFormSet
 from .models import Course
 from .models import Subject
+from students.forms import CourseEnrollForm
 
 # class ManageCourseListView(ListView):
 #     model = Course
@@ -265,6 +266,16 @@ class CourseDetailView(DetailView):
     Затем формирует результат в виде HTML-страницы, сгенерированной из шаблона с именем
     template_name. В контекст шаблона добавляется переменная - объект модели.
 
+    переопределяем метод базового класса get_context_data(), чтобы добавить форму
+    в контекст шаблона. Объект формы при этом содержит скрытое поле с ID курса, поэтому
+    при нажатии кнопки на сервер будут отправлены данные курса и пользователя.
+
      """
     model = Course
     template_name = 'courses/course/detail.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(CourseDetailView, self).get_context_data(**kwargs)
+        context['enroll_form'] = CourseEnrollForm(initial={'course': self.object})
+
+        return context
