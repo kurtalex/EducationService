@@ -2,6 +2,9 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes.fields import GenericForeignKey
+from django.template.loader import render_to_string
+from django.utils.safestring import mark_safe
+
 from .fields import OrderField
 
 """
@@ -82,6 +85,17 @@ class ItemBase(models.Model):
 
     def __str__(self):
         return self.title
+
+    def render(self):
+        """
+        Метод render() предоставляет общий интерфейс для генерации шаблона под конкретный тип содержимого.
+        Атрибут self._meta.model_name динамически формирует имя шаблона
+        :return:
+        render_to_string() чтобы сгенерировать шаблон с контекстом и получить результат в виде строки.
+        Каждый тип содержимого будет использовать соответствующий ему шаблон, полученный по названию модели.
+        """
+        return render_to_string('courses/content/{}.html'.format(
+            self._meta.model_name), {'item': self})
 
 
 class Text(ItemBase):
