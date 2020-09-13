@@ -11,6 +11,8 @@ from ..models import Subject
 from ..models import Course
 from .serializers import SubjectSerializer
 from .serializers import CourseSerializer
+from .permissions import IsEnrolled
+from .serializers import CourseWithContentsSerializer
 
 
 class SubjectListView(generics.ListAPIView):
@@ -60,3 +62,18 @@ class CourseViewSet(viewsets.ReadOnlyModelViewSet):
         course = self.get_object()
         course.students.add(request.user)
         return Response({'enrolled': True})
+    """
+    Для метода contests() используем декоратор action(detail=True), чтобы показать, что метод работает с одним объектом,
+    а не списком. Указываем, что метод обрабатывает только GET-запросы.
+    Обращаемся к сериализатору CourseWithContentsSerializer для формирования содержимого курса для ответа
+    Используем разрешения IsAuthenticated и IsEnrolled. Так мы ограничим доступ к курсам, и их содержимое
+    смогут просматривать только записавшиеся студенты.
+    Вызываем существующий метод retrieve(), чтобы вернуть объект модели Course.
+    """
+    @action(detail=True, methods=['get'], serializer_class=CourseWithContentsSerializer,
+            authentication_classes=[BasicAuthentication],
+            permission_classes=[IsAuthenticated, IsEnrolled])
+    def contents(self, request, *args, **kwargs):
+        return self.retrieve(request, *args, **kwargs)
+
+
