@@ -1,17 +1,22 @@
 {% extends "base.html" %}
+{% load i18n %}
 {% block title %}
     {% if object %}
+        {% blocktranslate %}
         Edit content "{{ object.title }}"
+        {% endblocktranslate %}
     {% else %}
-        Add a new content
+        {% trans "Add a new content" %}
     {% endif %}
 {% endblock %}
 {% block content %}
     <h1>
         {% if object %}
+            {% blocktranslate %}
             Edit content "{{ object.title }}"
+            {% endblocktranslate %}
         {% else %}
-            Add a new content
+            {% trans "Add a new content" %}
         {% endif %}
     </h1>
     <div class="module">

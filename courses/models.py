@@ -4,6 +4,7 @@ from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes.fields import GenericForeignKey
 from django.template.loader import render_to_string
 from django.utils.safestring import mark_safe
+from django.utils.translation import gettext_lazy as _
 
 from .fields import OrderField
 
@@ -18,8 +19,8 @@ created - дата и время создания курса ПРОСТАВЛЯ�
 
 
 class Subject(models.Model):
-    title = models.CharField(max_length=200)
-    slug = models.SlugField(max_length=200, unique=True)  # “Slug” – это короткое название-метка, которое содержит
+    title = models.CharField(_('title'), max_length=200)
+    slug = models.SlugField(_('slug'), max_length=200, unique=True)  # “Slug” – это короткое название-метка, которое содержит
 
     # только буквы, числа, подчеркивание или дефис. В основном используются в URL.
 
@@ -33,10 +34,10 @@ class Subject(models.Model):
 class Course(models.Model):
     owner = models.ForeignKey(User, related_name='courses_created', on_delete=models.CASCADE)
     subject = models.ForeignKey(Subject, related_name='courses', on_delete=models.CASCADE)
-    title = models.CharField(max_length=200)
-    slug = models.SlugField(max_length=200, unique=True)
-    overview = models.TextField()
-    created = models.DateTimeField(auto_now_add=True)
+    title = models.CharField(_('title'), max_length=200)
+    slug = models.SlugField(_('slug'), max_length=200, unique=True)
+    overview = models.TextField(_('overview'))
+    created = models.DateTimeField(_('created'), auto_now_add=True)
     students = models.ManyToManyField(User, related_name='courses_joined', blank=True)
 
     class Meta:
@@ -48,8 +49,8 @@ class Course(models.Model):
 
 class Module(models.Model):
     course = models.ForeignKey(Course, related_name='modules', on_delete=models.CASCADE)
-    title = models.CharField(max_length=200)
-    description = models.TextField(blank=True)
+    title = models.CharField(_('title'), max_length=200)
+    description = models.TextField(_('description'), blank=True)
     order = OrderField(blank=True, for_fields=['course'])
 
     class Meta:
