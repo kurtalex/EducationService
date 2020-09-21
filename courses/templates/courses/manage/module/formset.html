@@ -1,10 +1,16 @@
 {% extends "base.html" %}
 {% load i18n %}
 {% block title %}
+    {% blocktranslate %}
     Edit "{{ course.title }}"
+    {% endblocktranslate %}
 {% endblock %}
 {% block content %}
-    <h1>Edit "{{ course.title }}"</h1>
+    <h1>
+        {% blocktranslate %}
+        Edit "{{ course.title }}"
+        {% endblocktranslate %}
+    </h1>
     <div class="module">
         <h2>{% trans "Course modules" %}</h2>
         <form action="" method="post">

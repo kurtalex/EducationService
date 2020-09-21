@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-20 19:43+0300\n"
+"POT-Creation-Date: 2020-09-21 20:17+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,11 +18,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\EducationService\settings.py:117
+#: .\EducationService\settings.py:118
 msgid "English"
 msgstr ""
 
-#: .\EducationService\settings.py:118
+#: .\EducationService\settings.py:119
 msgid "Russian"
 msgstr ""
 
@@ -58,6 +58,55 @@ msgstr ""
 msgid "Sign in"
 msgstr ""
 
+#: .\courses\templates\courses\content\file.html:2
+msgid "Download file"
+msgstr ""
+
+#: .\courses\templates\courses\course\detail.html:12
+msgid "Overview"
+msgstr ""
+
+#: .\courses\templates\courses\course\detail.html:28
+msgid "Register to enroll"
+msgstr ""
+
+#: .\courses\templates\courses\course\list.html:5
+#, python-format
+msgid ""
+"\n"
+"        %(subject.title)s courses\n"
+"        "
+msgstr ""
+
+#: .\courses\templates\courses\course\list.html:9
+#: .\courses\templates\courses\course\list.html:19
+msgid "All courses"
+msgstr ""
+
+#: .\courses\templates\courses\course\list.html:15
+#, python-format
+msgid ""
+"\n"
+"            %(subject.title)s courses\n"
+"            "
+msgstr ""
+
+#: .\courses\templates\courses\course\list.html:23
+msgid "Subjects"
+msgstr ""
+
+#: .\courses\templates\courses\course\list.html:26
+msgid "All"
+msgstr ""
+
+#: .\courses\templates\courses\course\list.html:34
+#, python-format
+msgid ""
+"\n"
+"                            %(s.total_courses)s courses\n"
+"                            "
+msgstr ""
+
 #: .\courses\templates\courses\manage\content\form.html:5
 #, python-format
 msgid ""
@@ -77,6 +126,152 @@ msgid ""
 "\n"
 "            Edit content \"%(object.title)s\"\n"
 "            "
+msgstr ""
+
+#: .\courses\templates\courses\manage\course\delete.html:3
+msgid "Delete course"
+msgstr ""
+
+#: .\courses\templates\courses\manage\course\delete.html:5
+#, python-format
+msgid "Delete course \"%(object.title)s\""
+msgstr ""
+
+#: .\courses\templates\courses\manage\course\delete.html:9
+#, python-format
+msgid "Are you sure you want to delete \"%(object)s\"?"
+msgstr ""
+
+#: .\courses\templates\courses\manage\course\form.html:5
+#, python-format
+msgid ""
+"\n"
+"        Edit course \"%(object.title)s\"\n"
+"        "
+msgstr ""
+
+#: .\courses\templates\courses\manage\course\form.html:9
+#: .\courses\templates\courses\manage\course\form.html:19
+msgid "Create a new course"
+msgstr ""
+
+#: .\courses\templates\courses\manage\course\form.html:15
+#, python-format
+msgid ""
+"\n"
+"            Edit course \"%(object.title)s\"\n"
+"            "
+msgstr ""
+
+#: .\courses\templates\courses\manage\course\form.html:23
+msgid "Course info"
+msgstr ""
+
+#: .\courses\templates\courses\manage\course\list.html:3
+#: .\courses\templates\courses\manage\course\list.html:5
+#: .\students\templates\students\course\list.html:3
+#: .\students\templates\students\course\list.html:5
+msgid "My courses"
+msgstr ""
+
+#: .\courses\templates\courses\manage\course\list.html:11
+#: .\courses\templates\courses\manage\module\content_list.html:51
+msgid "Edit"
+msgstr ""
+
+#: .\courses\templates\courses\manage\course\list.html:12
+#: .\venv\Lib\site-packages\django\forms\formsets.py:391
+msgid "Delete"
+msgstr ""
+
+#: .\courses\templates\courses\manage\course\list.html:13
+#: .\courses\templates\courses\manage\module\content_list.html:37
+msgid "Edit modules"
+msgstr ""
+
+#: .\courses\templates\courses\manage\course\list.html:15
+msgid "Manage contents"
+msgstr ""
+
+#: .\courses\templates\courses\manage\course\list.html:20
+msgid "You haven't created any courses yet."
+msgstr ""
+
+#: .\courses\templates\courses\manage\course\list.html:23
+msgid "Create new course"
+msgstr ""
+
+#: .\courses\templates\courses\manage\module\content_list.html:5
+#, python-format
+msgid ""
+"\n"
+"        Module %(module.order|add:1)s: %(module.title)s\n"
+"    "
+msgstr ""
+
+#: .\courses\templates\courses\manage\module\content_list.html:12
+#, python-format
+msgid ""
+"\n"
+"                Course \"%(course.title)s\"\n"
+"            "
+msgstr ""
+
+#: .\courses\templates\courses\manage\module\content_list.html:17
+msgid "Modules"
+msgstr ""
+
+#: .\courses\templates\courses\manage\module\content_list.html:24
+#, python-format
+msgid ""
+"\n"
+"        Module <span class=\"order\">%(m.order|add:1)s</span>\n"
+"    "
+msgstr ""
+
+#: .\courses\templates\courses\manage\module\content_list.html:33
+#: .\students\templates\students\course\detail.html:27
+msgid "No modules yet."
+msgstr ""
+
+#: .\courses\templates\courses\manage\module\content_list.html:41
+#, python-format
+msgid ""
+"\n"
+"                    Module %(module.order|add:1)s: %(module.title)s\n"
+"                "
+msgstr ""
+
+#: .\courses\templates\courses\manage\module\content_list.html:45
+msgid "Module contents:"
+msgstr ""
+
+#: .\courses\templates\courses\manage\module\content_list.html:60
+msgid "This module has no contents yet."
+msgstr ""
+
+#: .\courses\templates\courses\manage\module\content_list.html:63
+msgid "Add new content:"
+msgstr ""
+
+#: .\courses\templates\courses\manage\module\formset.html:4
+#, python-format
+msgid ""
+"\n"
+"    Edit \"%(course.title)s\"\n"
+"    "
+msgstr ""
+
+#: .\courses\templates\courses\manage\module\formset.html:10
+#, python-format
+msgid ""
+"\n"
+"        Edit \"%(course.title)s\"\n"
+"        "
+msgstr ""
+
+#: .\courses\templates\courses\manage\module\formset.html:15
+msgid "Course modules"
 msgstr ""
 
 #: .\courses\templates\registration\logged_out.html:3
@@ -107,6 +302,86 @@ msgstr ""
 
 #: .\courses\templates\registration\login.html:10
 msgid "Please, use the following form to log-in:"
+msgstr ""
+
+#: .\students\templates\students\course\detail.html:20
+msgid "Module"
+msgstr ""
+
+#: .\students\templates\students\course\list.html:11
+msgid "Access contents"
+msgstr ""
+
+#: .\students\templates\students\course\list.html:15
+msgid "You are not enrolled in any courses yet."
+msgstr ""
+
+#: .\students\templates\students\course\list.html:16
+msgid "Browse courses"
+msgstr ""
+
+#: .\students\templates\students\course\list.html:17
+msgid "to enroll in a course."
+msgstr ""
+
+#: .\students\templates\students\student\registration.html:4
+#: .\students\templates\students\student\registration.html:8
+msgid "Sign up"
+msgstr ""
+
+#: .\students\templates\students\student\registration.html:11
+msgid "Enter your details to create an account:"
+msgstr ""
+
+#: .\venv\Lib\site-packages\ckeditor_uploader\forms.py:6
+msgid "Search files"
+msgstr ""
+
+#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:5
+msgid "Select an image to embed"
+msgstr ""
+
+#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:27
+msgid "Browse for the image you want, then click 'Embed Image' to continue..."
+msgstr ""
+
+#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:29
+msgid ""
+"No images found. Upload images using the 'Image Button' dialog's 'Upload' "
+"tab."
+msgstr ""
+
+#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:50
+msgid "Images in: "
+msgstr ""
+
+#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:62
+#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:80
+msgid "Embed Image"
+msgstr ""
+
+#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:146
+msgid "Play Slideshow"
+msgstr ""
+
+#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:147
+msgid "Pause Slideshow"
+msgstr ""
+
+#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:148
+msgid "&lsaquo; Previous Photo"
+msgstr ""
+
+#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:149
+msgid "Next Photo &rsaquo;"
+msgstr ""
+
+#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:150
+msgid "Next &rsaquo;"
+msgstr ""
+
+#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:151
+msgid "&lsaquo; Prev"
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\contrib\messages\apps.py:7
@@ -657,10 +932,6 @@ msgstr[1] ""
 #: .\venv\Lib\site-packages\django\forms\formsets.py:379
 #: .\venv\Lib\site-packages\django\forms\formsets.py:386
 msgid "Order"
-msgstr ""
-
-#: .\venv\Lib\site-packages\django\forms\formsets.py:391
-msgid "Delete"
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\forms\models.py:755

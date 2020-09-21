@@ -8,23 +8,22 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-20 19:43+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2020-09-21 20:17+0300\n"
+"PO-Revision-Date: 2020-09-21 20:28+0230\n"
+"Last-Translator: b'  <kurtalex77@gmail.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
-"%100>=11 && n%100<=14)? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
+"X-Translated-Using: django-rosetta 0.9.4\n"
 
-#: .\EducationService\settings.py:117
+#: .\EducationService\settings.py:118
 msgid "English"
 msgstr "Английский"
 
-#: .\EducationService\settings.py:118
+#: .\EducationService\settings.py:119
 msgid "Russian"
 msgstr "Русский"
 
@@ -60,6 +59,73 @@ msgstr "Выйти"
 msgid "Sign in"
 msgstr "Войти"
 
+#: .\courses\templates\courses\content\file.html:2
+msgid "Download file"
+msgstr "Загрузить файл"
+
+#: .\courses\templates\courses\course\detail.html:12
+#, fuzzy
+#| msgid "overview"
+msgid "Overview"
+msgstr "краткое описание"
+
+#: .\courses\templates\courses\course\detail.html:28
+msgid "Register to enroll"
+msgstr "Необходимо зарегестрироваться "
+
+#: .\courses\templates\courses\course\list.html:5
+#, fuzzy, python-format
+#| msgid ""
+#| "\n"
+#| "        Edit course \"%(object.title)s\"\n"
+#| "        "
+msgid ""
+"\n"
+"        %(subject.title)s courses\n"
+"        "
+msgstr ""
+"\n"
+"Изменить курс \"%(object.title)s\""
+
+#: .\courses\templates\courses\course\list.html:9
+#: .\courses\templates\courses\course\list.html:19
+#, fuzzy
+#| msgid "My courses"
+msgid "All courses"
+msgstr "Мои курсы"
+
+#: .\courses\templates\courses\course\list.html:15
+#, fuzzy, python-format
+#| msgid ""
+#| "\n"
+#| "            Edit course \"%(object.title)s\"\n"
+#| "            "
+msgid ""
+"\n"
+"            %(subject.title)s courses\n"
+"            "
+msgstr ""
+"\n"
+"Изменить курс \"%(object.title)s\""
+
+#: .\courses\templates\courses\course\list.html:23
+msgid "Subjects"
+msgstr "Предметы"
+
+#: .\courses\templates\courses\course\list.html:26
+msgid "All"
+msgstr "Все"
+
+#: .\courses\templates\courses\course\list.html:34
+#, python-format
+msgid ""
+"\n"
+"                            %(s.total_courses)s courses\n"
+"                            "
+msgstr ""
+"\n"
+"%(s.total_courses)s курсы"
+
 #: .\courses\templates\courses\manage\content\form.html:5
 #, python-format
 msgid ""
@@ -67,6 +133,8 @@ msgid ""
 "        Edit content \"%(object.title)s\"\n"
 "        "
 msgstr ""
+"\n"
+"Изменить контент \"%(object.title)s\""
 
 #: .\courses\templates\courses\manage\content\form.html:9
 #: .\courses\templates\courses\manage\content\form.html:19
@@ -80,6 +148,200 @@ msgid ""
 "            Edit content \"%(object.title)s\"\n"
 "            "
 msgstr ""
+"\n"
+"Изменить контент \"%(object.title)s\""
+
+#: .\courses\templates\courses\manage\course\delete.html:3
+msgid "Delete course"
+msgstr "Удалить курс"
+
+#: .\courses\templates\courses\manage\course\delete.html:5
+#, python-format
+msgid "Delete course \"%(object.title)s\""
+msgstr "Удалить курс \"%(object.title)s\""
+
+#: .\courses\templates\courses\manage\course\delete.html:9
+#, python-format
+msgid "Are you sure you want to delete \"%(object)s\"?"
+msgstr "Вы уверены, что хотите удалить \"%(object)s\"?"
+
+#: .\courses\templates\courses\manage\course\form.html:5
+#, python-format
+msgid ""
+"\n"
+"        Edit course \"%(object.title)s\"\n"
+"        "
+msgstr ""
+"\n"
+"Изменить курс \"%(object.title)s\""
+
+#: .\courses\templates\courses\manage\course\form.html:9
+#: .\courses\templates\courses\manage\course\form.html:19
+msgid "Create a new course"
+msgstr "Создать новый курс"
+
+#: .\courses\templates\courses\manage\course\form.html:15
+#, python-format
+msgid ""
+"\n"
+"            Edit course \"%(object.title)s\"\n"
+"            "
+msgstr ""
+"\n"
+"Изменить курс \"%(object.title)s\""
+
+#: .\courses\templates\courses\manage\course\form.html:23
+msgid "Course info"
+msgstr "Информация о курсе"
+
+#: .\courses\templates\courses\manage\course\list.html:3
+#: .\courses\templates\courses\manage\course\list.html:5
+#: .\students\templates\students\course\list.html:3
+#: .\students\templates\students\course\list.html:5
+msgid "My courses"
+msgstr "Мои курсы"
+
+#: .\courses\templates\courses\manage\course\list.html:11
+#: .\courses\templates\courses\manage\module\content_list.html:51
+msgid "Edit"
+msgstr "Изменить"
+
+#: .\courses\templates\courses\manage\course\list.html:12
+#: .\venv\Lib\site-packages\django\forms\formsets.py:391
+msgid "Delete"
+msgstr "Удалить"
+
+#: .\courses\templates\courses\manage\course\list.html:13
+#: .\courses\templates\courses\manage\module\content_list.html:37
+#, fuzzy
+#| msgid "Course modules"
+msgid "Edit modules"
+msgstr "Модуль курса"
+
+#: .\courses\templates\courses\manage\course\list.html:15
+#, fuzzy
+#| msgid "Add a new content"
+msgid "Manage contents"
+msgstr "Добавить новый контент"
+
+#: .\courses\templates\courses\manage\course\list.html:20
+msgid "You haven't created any courses yet."
+msgstr "Вы ещё не создали никаких курсов"
+
+#: .\courses\templates\courses\manage\course\list.html:23
+msgid "Create new course"
+msgstr "Создать новый курс"
+
+#: .\courses\templates\courses\manage\module\content_list.html:5
+#, fuzzy, python-format
+#| msgid ""
+#| "\n"
+#| "        Edit course \"%(object.title)s\"\n"
+#| "        "
+msgid ""
+"\n"
+"        Module %(module.order|add:1)s: %(module.title)s\n"
+"    "
+msgstr ""
+"\n"
+"Изменить курс \"%(object.title)s\""
+
+#: .\courses\templates\courses\manage\module\content_list.html:12
+#, fuzzy, python-format
+#| msgid ""
+#| "\n"
+#| "            Edit course \"%(object.title)s\"\n"
+#| "            "
+msgid ""
+"\n"
+"                Course \"%(course.title)s\"\n"
+"            "
+msgstr ""
+"\n"
+"Изменить курс \"%(object.title)s\""
+
+#: .\courses\templates\courses\manage\module\content_list.html:17
+msgid "Modules"
+msgstr "Модули"
+
+#: .\courses\templates\courses\manage\module\content_list.html:24
+#, python-format
+msgid ""
+"\n"
+"        Module <span class=\"order\">%(m.order|add:1)s</span>\n"
+"    "
+msgstr ""
+"\n"
+"Модуль <span class=\"order\">%(m.order|add:1)s</span>"
+
+#: .\courses\templates\courses\manage\module\content_list.html:33
+#: .\students\templates\students\course\detail.html:27
+#, fuzzy
+#| msgid "Course modules"
+msgid "No modules yet."
+msgstr "Модуль курса"
+
+#: .\courses\templates\courses\manage\module\content_list.html:41
+#, fuzzy, python-format
+#| msgid ""
+#| "\n"
+#| "            Edit course \"%(object.title)s\"\n"
+#| "            "
+msgid ""
+"\n"
+"                    Module %(module.order|add:1)s: %(module.title)s\n"
+"                "
+msgstr ""
+"\n"
+"Изменить курс \"%(object.title)s\""
+
+#: .\courses\templates\courses\manage\module\content_list.html:45
+#, fuzzy
+#| msgid "Add a new content"
+msgid "Module contents:"
+msgstr "Добавить новый контент"
+
+#: .\courses\templates\courses\manage\module\content_list.html:60
+msgid "This module has no contents yet."
+msgstr "Этот модуль пустой."
+
+#: .\courses\templates\courses\manage\module\content_list.html:63
+#, fuzzy
+#| msgid "Add a new content"
+msgid "Add new content:"
+msgstr "Добавить новый контент"
+
+#: .\courses\templates\courses\manage\module\formset.html:4
+#, fuzzy, python-format
+#| msgid ""
+#| "\n"
+#| "        Edit course \"%(object.title)s\"\n"
+#| "        "
+msgid ""
+"\n"
+"    Edit \"%(course.title)s\"\n"
+"    "
+msgstr ""
+"\n"
+"Изменить курс \"%(object.title)s\""
+
+#: .\courses\templates\courses\manage\module\formset.html:10
+#, fuzzy, python-format
+#| msgid ""
+#| "\n"
+#| "        Edit course \"%(object.title)s\"\n"
+#| "        "
+msgid ""
+"\n"
+"        Edit \"%(course.title)s\"\n"
+"        "
+msgstr ""
+"\n"
+"Изменить курс \"%(object.title)s\""
+
+#: .\courses\templates\courses\manage\module\formset.html:15
+msgid "Course modules"
+msgstr "Модуль курса"
 
 #: .\courses\templates\registration\logged_out.html:3
 #: .\courses\templates\registration\logged_out.html:5
@@ -105,11 +367,99 @@ msgstr "Вход"
 
 #: .\courses\templates\registration\login.html:8
 msgid "Your username and password didn't match. Please try again."
-msgstr "Ваше имя пользователя и пароль не совпадают. Пожалуйста, попробуйте еще раз."
+msgstr ""
+"Ваше имя пользователя и пароль не совпадают. Пожалуйста, попробуйте еще раз."
 
 #: .\courses\templates\registration\login.html:10
 msgid "Please, use the following form to log-in:"
 msgstr "Пожалуйста, используйте следующую форму для входа в систему:"
+
+#: .\students\templates\students\course\detail.html:20
+msgid "Module"
+msgstr "Модуль"
+
+#: .\students\templates\students\course\list.html:11
+#, fuzzy
+#| msgid "Add a new content"
+msgid "Access contents"
+msgstr "Добавить новый контент"
+
+#: .\students\templates\students\course\list.html:15
+#, fuzzy
+#| msgid "You haven't created any courses yet."
+msgid "You are not enrolled in any courses yet."
+msgstr "Вы ещё не создали никаких курсов"
+
+#: .\students\templates\students\course\list.html:16
+#, fuzzy
+#| msgid "My courses"
+msgid "Browse courses"
+msgstr "Мои курсы"
+
+#: .\students\templates\students\course\list.html:17
+msgid "to enroll in a course."
+msgstr "записаться на курс"
+
+#: .\students\templates\students\student\registration.html:4
+#: .\students\templates\students\student\registration.html:8
+#| msgid "Sign out"
+msgid "Sign up"
+msgstr "Зарегистрироваться"
+
+#: .\students\templates\students\student\registration.html:11
+msgid "Enter your details to create an account:"
+msgstr "Введите свои данные для создания учетной записи:"
+
+#: .\venv\Lib\site-packages\ckeditor_uploader\forms.py:6
+msgid "Search files"
+msgstr ""
+
+#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:5
+msgid "Select an image to embed"
+msgstr ""
+
+#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:27
+msgid "Browse for the image you want, then click 'Embed Image' to continue..."
+msgstr ""
+
+#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:29
+msgid ""
+"No images found. Upload images using the 'Image Button' dialog's 'Upload' "
+"tab."
+msgstr ""
+
+#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:50
+msgid "Images in: "
+msgstr ""
+
+#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:62
+#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:80
+msgid "Embed Image"
+msgstr ""
+
+#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:146
+msgid "Play Slideshow"
+msgstr ""
+
+#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:147
+msgid "Pause Slideshow"
+msgstr ""
+
+#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:148
+msgid "&lsaquo; Previous Photo"
+msgstr ""
+
+#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:149
+msgid "Next Photo &rsaquo;"
+msgstr ""
+
+#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:150
+msgid "Next &rsaquo;"
+msgstr ""
+
+#: .\venv\Lib\site-packages\ckeditor_uploader\templates\ckeditor\browse.html:151
+msgid "&lsaquo; Prev"
+msgstr ""
 
 #: .\venv\Lib\site-packages\django\contrib\messages\apps.py:7
 msgid "Messages"
@@ -164,8 +514,8 @@ msgstr ""
 
 #: .\venv\Lib\site-packages\django\core\validators.py:237
 msgid ""
-"Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or "
-"hyphens."
+"Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or"
+" hyphens."
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\core\validators.py:246
@@ -350,15 +700,15 @@ msgstr ""
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1239
 #, python-format
 msgid ""
-"“%(value)s” value has an invalid format. It must be in YYYY-MM-DD HH:MM[:ss[."
-"uuuuuu]][TZ] format."
+"“%(value)s” value has an invalid format. It must be in YYYY-MM-DD "
+"HH:MM[:ss[.uuuuuu]][TZ] format."
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1243
 #, python-format
 msgid ""
-"“%(value)s” value has the correct format (YYYY-MM-DD HH:MM[:ss[.uuuuuu]]"
-"[TZ]) but it is an invalid date/time."
+"“%(value)s” value has the correct format (YYYY-MM-DD "
+"HH:MM[:ss[.uuuuuu]][TZ]) but it is an invalid date/time."
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1247
@@ -377,8 +727,8 @@ msgstr ""
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1536
 #, python-format
 msgid ""
-"“%(value)s” value has an invalid format. It must be in [DD] [[HH:]MM:]ss[."
-"uuuuuu] format."
+"“%(value)s” value has an invalid format. It must be in [DD] "
+"[[HH:]MM:]ss[.uuuuuu] format."
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\db\models\fields\__init__.py:1539
@@ -537,7 +887,8 @@ msgid "Many-to-many relationship"
 msgstr ""
 
 #. Translators: If found as last label character, these punctuation
-#. characters will prevent the default label_suffix to be appended to the label
+#. characters will prevent the default label_suffix to be appended to the
+#. label
 #: .\venv\Lib\site-packages\django\forms\boundfield.py:150
 msgid ":?.!"
 msgstr ""
@@ -587,7 +938,8 @@ msgstr ""
 
 #: .\venv\Lib\site-packages\django\forms\fields.py:549
 #, python-format
-msgid "Ensure this filename has at most %(max)d character (it has %(length)d)."
+msgid ""
+"Ensure this filename has at most %(max)d character (it has %(length)d)."
 msgid_plural ""
 "Ensure this filename has at most %(max)d characters (it has %(length)d)."
 msgstr[0] ""
@@ -661,10 +1013,6 @@ msgstr[1] ""
 msgid "Order"
 msgstr ""
 
-#: .\venv\Lib\site-packages\django\forms\formsets.py:391
-msgid "Delete"
-msgstr ""
-
 #: .\venv\Lib\site-packages\django\forms\models.py:755
 #, python-format
 msgid "Please correct the duplicate data for %(field)s."
@@ -691,7 +1039,8 @@ msgid "The inline value did not match the parent instance."
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\forms\models.py:1180
-msgid "Select a valid choice. That choice is not one of the available choices."
+msgid ""
+"Select a valid choice. That choice is not one of the available choices."
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\forms\models.py:1298
@@ -1151,11 +1500,11 @@ msgstr ""
 
 #: .\venv\Lib\site-packages\django\views\csrf.py:124
 msgid ""
-"If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or "
-"including the “Referrer-Policy: no-referrer” header, please remove them. The "
-"CSRF protection requires the “Referer” header to do strict referer checking. "
-"If you’re concerned about privacy, use alternatives like <a rel=\"noreferrer"
-"\" …> for links to third-party sites."
+"If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or"
+" including the “Referrer-Policy: no-referrer” header, please remove them. "
+"The CSRF protection requires the “Referer” header to do strict referer "
+"checking. If you’re concerned about privacy, use alternatives like <a "
+"rel=\"noreferrer\" …> for links to third-party sites."
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\views\csrf.py:132
@@ -1206,8 +1555,8 @@ msgstr ""
 #: .\venv\Lib\site-packages\django\views\generic\dates.py:589
 #, python-format
 msgid ""
-"Future %(verbose_name_plural)s not available because %(class_name)s."
-"allow_future is False."
+"Future %(verbose_name_plural)s not available because "
+"%(class_name)s.allow_future is False."
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\views\generic\dates.py:623
@@ -1266,10 +1615,10 @@ msgstr ""
 #: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:369
 #, python-format
 msgid ""
-"You are seeing this page because <a href=\"https://docs.djangoproject.com/en/"
-"%(version)s/ref/settings/#debug\" target=\"_blank\" rel=\"noopener"
-"\">DEBUG=True</a> is in your settings file and you have not configured any "
-"URLs."
+"You are seeing this page because <a "
+"href=\"https://docs.djangoproject.com/en/%(version)s/ref/settings/#debug\" "
+"target=\"_blank\" rel=\"noopener\">DEBUG=True</a> is in your settings file "
+"and you have not configured any URLs."
 msgstr ""
 
 #: .\venv\Lib\site-packages\django\views\templates\default_urlconf.html:384

@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load i18n %}
 {% block title %}
     {{ object.title }}
 {% endblock %}
@@ -8,7 +9,7 @@
             {{ object.title }}
         </h1>
         <div class="module">
-            <h2>Overview</h2>
+            <h2>{% trans "Overview" %}</h2>
             <p>
                 <a href="{% url "course_list_subject" subject.slug %}">
                     {{ subject.title }}</a>.
@@ -24,7 +25,7 @@
                 </form>
             {% else %}
                 <a href="{% url "student_registration" %}" class="button">
-                    Register to enroll
+                    {% trans "Register to enroll" %}
                 </a>
             {% endif %}
         </div>

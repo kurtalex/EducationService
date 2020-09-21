@@ -1,30 +1,40 @@
 {% extends "base.html" %}
+{% load i18n %}
 {% block title %}
     {% if subject %}
+        {% blocktranslate %}
         {{ subject.title }} courses
+        {% endblocktranslate %}
     {% else %}
-        All courses
+        {% trans "All courses" %}
     {% endif %}
 {% endblock %}
 {% block content %}
     <h1>
         {% if subject %}
+            {% blocktranslate %}
             {{ subject.title }} courses
+            {% endblocktranslate %}
         {% else %}
-            All courses
+            {% trans "All courses" %}
         {% endif %}
     </h1>
     <div class="contents">
-        <h3>Subjects</h3>
+        <h3>{% trans "Subjects" %}</h3>
         <ul id="modules">
             <li {% if not subject %}class="selected"{% endif %}>
-                <a href="{% url "course_list" %}">All</a>
+                <a href="{% url "course_list" %}">{% trans "All" %}</a>
             </li>
             {% for s in subjects %}
                 <li {% if subject == s %}class="selected"{% endif %}>
                     <a href="{% url "course_list_subject" s.slug %}">
                         {{ s.title }}
-                        <br><span>{{ s.total_courses }} courses</span>
+                        <br>
+                        <span>
+                            {% blocktranslate %}
+                            {{ s.total_courses }} courses
+                            {% endblocktranslate %}
+                        </span>
                     </a>
                 </li>
             {% endfor %}
