@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-21 20:17+0300\n"
+"POT-Creation-Date: 2020-09-21 21:41+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -111,7 +111,7 @@ msgstr ""
 #, python-format
 msgid ""
 "\n"
-"        Edit content \"%(object.title)s\"\n"
+"        Edit content \"%(title)s\"\n"
 "        "
 msgstr ""
 
@@ -124,8 +124,12 @@ msgstr ""
 #, python-format
 msgid ""
 "\n"
-"            Edit content \"%(object.title)s\"\n"
+"            Edit content \"%(title)s\"\n"
 "            "
+msgstr ""
+
+#: .\courses\templates\courses\manage\content\form.html:27
+msgid "Save content"
 msgstr ""
 
 #: .\courses\templates\courses\manage\course\delete.html:3
@@ -142,11 +146,15 @@ msgstr ""
 msgid "Are you sure you want to delete \"%(object)s\"?"
 msgstr ""
 
+#: .\courses\templates\courses\manage\course\delete.html:10
+msgid "Confirm"
+msgstr ""
+
 #: .\courses\templates\courses\manage\course\form.html:5
 #, python-format
 msgid ""
 "\n"
-"        Edit course \"%(object.title)s\"\n"
+"        Edit course \"%(title)s\"\n"
 "        "
 msgstr ""
 
@@ -159,12 +167,16 @@ msgstr ""
 #, python-format
 msgid ""
 "\n"
-"            Edit course \"%(object.title)s\"\n"
+"            Edit course \"%(title)s\"\n"
 "            "
 msgstr ""
 
 #: .\courses\templates\courses\manage\course\form.html:23
 msgid "Course info"
+msgstr ""
+
+#: .\courses\templates\courses\manage\course\form.html:27
+msgid "Save course"
 msgstr ""
 
 #: .\courses\templates\courses\manage\course\list.html:3
@@ -180,6 +192,7 @@ msgid "Edit"
 msgstr ""
 
 #: .\courses\templates\courses\manage\course\list.html:12
+#: .\courses\templates\courses\manage\module\content_list.html:54
 #: .\venv\Lib\site-packages\django\forms\formsets.py:391
 msgid "Delete"
 msgstr ""
@@ -274,6 +287,10 @@ msgstr ""
 msgid "Course modules"
 msgstr ""
 
+#: .\courses\templates\courses\manage\module\formset.html:20
+msgid "Save modules"
+msgstr ""
+
 #: .\courses\templates\registration\logged_out.html:3
 #: .\courses\templates\registration\logged_out.html:5
 msgid "Logged out"
@@ -293,6 +310,7 @@ msgstr ""
 
 #: .\courses\templates\registration\login.html:3
 #: .\courses\templates\registration\login.html:5
+#: .\courses\templates\registration\login.html:17
 msgid "Log-in"
 msgstr ""
 
@@ -331,6 +349,10 @@ msgstr ""
 
 #: .\students\templates\students\student\registration.html:11
 msgid "Enter your details to create an account:"
+msgstr ""
+
+#: .\students\templates\students\student\registration.html:15
+msgid "Create my account"
 msgstr ""
 
 #: .\venv\Lib\site-packages\ckeditor_uploader\forms.py:6

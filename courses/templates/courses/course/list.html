@@ -2,9 +2,9 @@
 {% load i18n %}
 {% block title %}
     {% if subject %}
-        {% blocktranslate %}
+        {% blocktrans %}
         {{ subject.title }} courses
-        {% endblocktranslate %}
+        {% endblocktrans %}
     {% else %}
         {% trans "All courses" %}
     {% endif %}
@@ -12,9 +12,9 @@
 {% block content %}
     <h1>
         {% if subject %}
-            {% blocktranslate %}
+            {% blocktrans %}
             {{ subject.title }} courses
-            {% endblocktranslate %}
+            {% endblocktrans %}
         {% else %}
             {% trans "All courses" %}
         {% endif %}
@@ -31,9 +31,9 @@
                         {{ s.title }}
                         <br>
                         <span>
-                            {% blocktranslate %}
+                            {% blocktrans %}
                             {{ s.total_courses }} courses
-                            {% endblocktranslate %}
+                            {% endblocktrans %}
                         </span>
                     </a>
                 </li>

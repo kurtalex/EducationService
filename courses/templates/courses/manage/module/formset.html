@@ -1,15 +1,15 @@
 {% extends "base.html" %}
 {% load i18n %}
 {% block title %}
-    {% blocktranslate %}
+    {% blocktrans %}
     Edit "{{ course.title }}"
-    {% endblocktranslate %}
+    {% endblocktrans %}
 {% endblock %}
 {% block content %}
     <h1>
-        {% blocktranslate %}
+        {% blocktrans %}
         Edit "{{ course.title }}"
-        {% endblocktranslate %}
+        {% endblocktrans %}
     </h1>
     <div class="module">
         <h2>{% trans "Course modules" %}</h2>
@@ -17,7 +17,7 @@
             {{ formset }}
             {{ formset.management_form }}
             {% csrf_token %}
-            <input type="submit" class="button" value="Save modules">
+            <input type="submit" class="button" value="{% trans "Save modules" %}">
         </form>
     </div>
 {% endblock %}

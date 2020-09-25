@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-21 20:17+0300\n"
-"PO-Revision-Date: 2020-09-21 20:28+0230\n"
+"POT-Creation-Date: 2020-09-21 21:41+0300\n"
+"PO-Revision-Date: 2020-09-21 21:43+0230\n"
 "Last-Translator: b'  <kurtalex77@gmail.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -64,49 +64,37 @@ msgid "Download file"
 msgstr "Загрузить файл"
 
 #: .\courses\templates\courses\course\detail.html:12
-#, fuzzy
-#| msgid "overview"
 msgid "Overview"
-msgstr "краткое описание"
+msgstr "Краткое описание"
 
 #: .\courses\templates\courses\course\detail.html:28
 msgid "Register to enroll"
 msgstr "Необходимо зарегестрироваться "
 
 #: .\courses\templates\courses\course\list.html:5
-#, fuzzy, python-format
-#| msgid ""
-#| "\n"
-#| "        Edit course \"%(object.title)s\"\n"
-#| "        "
+#, python-format
 msgid ""
 "\n"
 "        %(subject.title)s courses\n"
 "        "
 msgstr ""
 "\n"
-"Изменить курс \"%(object.title)s\""
+"%(subject.title)s курсы"
 
 #: .\courses\templates\courses\course\list.html:9
 #: .\courses\templates\courses\course\list.html:19
-#, fuzzy
-#| msgid "My courses"
 msgid "All courses"
-msgstr "Мои курсы"
+msgstr "Все курсы"
 
 #: .\courses\templates\courses\course\list.html:15
-#, fuzzy, python-format
-#| msgid ""
-#| "\n"
-#| "            Edit course \"%(object.title)s\"\n"
-#| "            "
+#, python-format
 msgid ""
 "\n"
 "            %(subject.title)s courses\n"
 "            "
 msgstr ""
 "\n"
-"Изменить курс \"%(object.title)s\""
+"%(subject.title)s курсы"
 
 #: .\courses\templates\courses\course\list.html:23
 msgid "Subjects"
@@ -130,11 +118,11 @@ msgstr ""
 #, python-format
 msgid ""
 "\n"
-"        Edit content \"%(object.title)s\"\n"
+"        Edit content \"%(title)s\"\n"
 "        "
 msgstr ""
 "\n"
-"Изменить контент \"%(object.title)s\""
+"Изменить контент \"%(title)s\""
 
 #: .\courses\templates\courses\manage\content\form.html:9
 #: .\courses\templates\courses\manage\content\form.html:19
@@ -145,11 +133,16 @@ msgstr "Добавить новый контент"
 #, python-format
 msgid ""
 "\n"
-"            Edit content \"%(object.title)s\"\n"
+"            Edit content \"%(title)s\"\n"
 "            "
 msgstr ""
 "\n"
-"Изменить контент \"%(object.title)s\""
+"Изменить контент \"%(title)s\""
+
+#: .\courses\templates\courses\manage\content\form.html:27
+#| msgid "Manage contents"
+msgid "Save content"
+msgstr "Сохранить контент"
 
 #: .\courses\templates\courses\manage\course\delete.html:3
 msgid "Delete course"
@@ -165,15 +158,19 @@ msgstr "Удалить курс \"%(object.title)s\""
 msgid "Are you sure you want to delete \"%(object)s\"?"
 msgstr "Вы уверены, что хотите удалить \"%(object)s\"?"
 
+#: .\courses\templates\courses\manage\course\delete.html:10
+msgid "Confirm"
+msgstr ""
+
 #: .\courses\templates\courses\manage\course\form.html:5
 #, python-format
 msgid ""
 "\n"
-"        Edit course \"%(object.title)s\"\n"
+"        Edit course \"%(title)s\"\n"
 "        "
 msgstr ""
 "\n"
-"Изменить курс \"%(object.title)s\""
+"Изменить курс \"%(title)s\""
 
 #: .\courses\templates\courses\manage\course\form.html:9
 #: .\courses\templates\courses\manage\course\form.html:19
@@ -184,15 +181,20 @@ msgstr "Создать новый курс"
 #, python-format
 msgid ""
 "\n"
-"            Edit course \"%(object.title)s\"\n"
+"            Edit course \"%(title)s\"\n"
 "            "
 msgstr ""
 "\n"
-"Изменить курс \"%(object.title)s\""
+"Изменить курс \"%(title)s\""
 
 #: .\courses\templates\courses\manage\course\form.html:23
 msgid "Course info"
 msgstr "Информация о курсе"
+
+#: .\courses\templates\courses\manage\course\form.html:27
+#| msgid "Delete course"
+msgid "Save course"
+msgstr "Сохранить курс"
 
 #: .\courses\templates\courses\manage\course\list.html:3
 #: .\courses\templates\courses\manage\course\list.html:5
@@ -207,22 +209,19 @@ msgid "Edit"
 msgstr "Изменить"
 
 #: .\courses\templates\courses\manage\course\list.html:12
+#: .\courses\templates\courses\manage\module\content_list.html:54
 #: .\venv\Lib\site-packages\django\forms\formsets.py:391
 msgid "Delete"
 msgstr "Удалить"
 
 #: .\courses\templates\courses\manage\course\list.html:13
 #: .\courses\templates\courses\manage\module\content_list.html:37
-#, fuzzy
-#| msgid "Course modules"
 msgid "Edit modules"
-msgstr "Модуль курса"
+msgstr "Редактировать модули"
 
 #: .\courses\templates\courses\manage\course\list.html:15
-#, fuzzy
-#| msgid "Add a new content"
 msgid "Manage contents"
-msgstr "Добавить новый контент"
+msgstr "Управление контентом"
 
 #: .\courses\templates\courses\manage\course\list.html:20
 msgid "You haven't created any courses yet."
@@ -233,32 +232,24 @@ msgid "Create new course"
 msgstr "Создать новый курс"
 
 #: .\courses\templates\courses\manage\module\content_list.html:5
-#, fuzzy, python-format
-#| msgid ""
-#| "\n"
-#| "        Edit course \"%(object.title)s\"\n"
-#| "        "
+#, python-format
 msgid ""
 "\n"
 "        Module %(module.order|add:1)s: %(module.title)s\n"
 "    "
 msgstr ""
 "\n"
-"Изменить курс \"%(object.title)s\""
+"Модуль %(module.order|add:1)s: %(module.title)s"
 
 #: .\courses\templates\courses\manage\module\content_list.html:12
-#, fuzzy, python-format
-#| msgid ""
-#| "\n"
-#| "            Edit course \"%(object.title)s\"\n"
-#| "            "
+#, python-format
 msgid ""
 "\n"
 "                Course \"%(course.title)s\"\n"
 "            "
 msgstr ""
 "\n"
-"Изменить курс \"%(object.title)s\""
+"Курс \"%(course.title)s\""
 
 #: .\courses\templates\courses\manage\module\content_list.html:17
 msgid "Modules"
@@ -276,72 +267,59 @@ msgstr ""
 
 #: .\courses\templates\courses\manage\module\content_list.html:33
 #: .\students\templates\students\course\detail.html:27
-#, fuzzy
-#| msgid "Course modules"
 msgid "No modules yet."
-msgstr "Модуль курса"
+msgstr "Модулей пока нет."
 
 #: .\courses\templates\courses\manage\module\content_list.html:41
-#, fuzzy, python-format
-#| msgid ""
-#| "\n"
-#| "            Edit course \"%(object.title)s\"\n"
-#| "            "
+#, python-format
 msgid ""
 "\n"
 "                    Module %(module.order|add:1)s: %(module.title)s\n"
 "                "
 msgstr ""
 "\n"
-"Изменить курс \"%(object.title)s\""
+"Модуль %(module.order|add:1)s: %(module.title)s"
 
 #: .\courses\templates\courses\manage\module\content_list.html:45
-#, fuzzy
-#| msgid "Add a new content"
 msgid "Module contents:"
-msgstr "Добавить новый контент"
+msgstr "Содержимое модуля"
 
 #: .\courses\templates\courses\manage\module\content_list.html:60
 msgid "This module has no contents yet."
 msgstr "Этот модуль пустой."
 
 #: .\courses\templates\courses\manage\module\content_list.html:63
-#, fuzzy
-#| msgid "Add a new content"
 msgid "Add new content:"
 msgstr "Добавить новый контент"
 
 #: .\courses\templates\courses\manage\module\formset.html:4
-#, fuzzy, python-format
-#| msgid ""
-#| "\n"
-#| "        Edit course \"%(object.title)s\"\n"
-#| "        "
+#, python-format
 msgid ""
 "\n"
 "    Edit \"%(course.title)s\"\n"
 "    "
 msgstr ""
 "\n"
-"Изменить курс \"%(object.title)s\""
+"Изменить \"%(course.title)s\""
 
 #: .\courses\templates\courses\manage\module\formset.html:10
-#, fuzzy, python-format
-#| msgid ""
-#| "\n"
-#| "        Edit course \"%(object.title)s\"\n"
-#| "        "
+#, python-format
 msgid ""
 "\n"
 "        Edit \"%(course.title)s\"\n"
 "        "
 msgstr ""
 "\n"
-"Изменить курс \"%(object.title)s\""
+"Изменить \"%(course.title)s\""
 
 #: .\courses\templates\courses\manage\module\formset.html:15
 msgid "Course modules"
 msgstr "Модуль курса"
+
+#: .\courses\templates\courses\manage\module\formset.html:20
+#| msgid "Course modules"
+msgid "Save modules"
+msgstr "Сохранить модули"
 
 #: .\courses\templates\registration\logged_out.html:3
 #: .\courses\templates\registration\logged_out.html:5
@@ -362,6 +340,7 @@ msgstr "войти снова"
 
 #: .\courses\templates\registration\login.html:3
 #: .\courses\templates\registration\login.html:5
+#: .\courses\templates\registration\login.html:17
 msgid "Log-in"
 msgstr "Вход"
 
@@ -379,22 +358,16 @@ msgid "Module"
 msgstr "Модуль"
 
 #: .\students\templates\students\course\list.html:11
-#, fuzzy
-#| msgid "Add a new content"
 msgid "Access contents"
-msgstr "Добавить новый контент"
+msgstr "Доступ к содержимому"
 
 #: .\students\templates\students\course\list.html:15
-#, fuzzy
-#| msgid "You haven't created any courses yet."
 msgid "You are not enrolled in any courses yet."
-msgstr "Вы ещё не создали никаких курсов"
+msgstr "Вы ещё не записались курсы"
 
 #: .\students\templates\students\course\list.html:16
-#, fuzzy
-#| msgid "My courses"
 msgid "Browse courses"
-msgstr "Мои курсы"
+msgstr "Загрузить курсы"
 
 #: .\students\templates\students\course\list.html:17
 msgid "to enroll in a course."
@@ -402,13 +375,17 @@ msgstr "записаться на курс"
 
 #: .\students\templates\students\student\registration.html:4
 #: .\students\templates\students\student\registration.html:8
-#| msgid "Sign out"
 msgid "Sign up"
 msgstr "Зарегистрироваться"
 
 #: .\students\templates\students\student\registration.html:11
 msgid "Enter your details to create an account:"
 msgstr "Введите свои данные для создания учетной записи:"
+
+#: .\students\templates\students\student\registration.html:15
+#| msgid "Create new course"
+msgid "Create my account"
+msgstr "Создать аккаунт"
 
 #: .\venv\Lib\site-packages\ckeditor_uploader\forms.py:6
 msgid "Search files"

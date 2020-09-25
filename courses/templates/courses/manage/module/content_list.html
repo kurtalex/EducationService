@@ -2,16 +2,16 @@
 {% load i18n %}
 {% load course %}
 {% block title %}
-    {% blocktranslate %}
+    {% blocktrans %}
         Module {{ module.order|add:1 }}: {{ module.title }}
-    {% endblocktranslate %}
+    {% endblocktrans %}
 {% endblock %}
 {% block content %}
     {% with course=module.course %}
         <h1>
-            {% blocktranslate %}
+            {% blocktrans %}
                 Course "{{ course.title }}"
-            {% endblocktranslate %}
+            {% endblocktrans %}
         </h1>
         <div class="contents">
             <h3>{% trans "Modules" %}</h3>
@@ -21,9 +21,9 @@
                         class="selected"{% endif %}>
                         <a href="{% url "module_content_list" m.id %}">
 <span>
-    {% blocktranslate %}
+    {% blocktrans %}
         Module <span class="order">{{ m.order|add:1 }}</span>
-    {% endblocktranslate %}
+    {% endblocktrans %}
 </span>
                             <br>
                             {{ m.title }}
@@ -38,9 +38,9 @@
         </div>
         <div class="module">
             <h2>
-                {% blocktranslate %}
+                {% blocktrans %}
                     Module {{ module.order|add:1 }}: {{ module.title }}
-                {% endblocktranslate %}
+                {% endblocktrans %}
             </h2>
             <h3>{% trans "Module contents:" %}</h3>
             <div id="module-contents">
@@ -51,7 +51,7 @@
                             <a href="{% url "module_content_update" module.id item|model_name item.id %}">{% trans "Edit" %}</a>
                             <form action="{% url "module_content_delete" content.id %}"
                                   method="post">
-                                <input type="submit" value="Delete">
+                                <input type="submit" value="{% trans "Delete" %}">
                                 {% csrf_token %}
                             </form>
                         {% endwith %}

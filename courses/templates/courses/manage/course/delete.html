@@ -2,12 +2,12 @@
 {% load i18n %}
 {% block title %}{% trans "Delete course" %}{% endblock %}
 {% block content %}
-    <h1>{% blocktranslate %}Delete course "{{ object.title }}"{% endblocktranslate %}</h1>
+    <h1>{% blocktrans %}Delete course "{{ object.title }}"{% endblocktrans %}</h1>
     <div class="module">
         <form action="" method="post">
             {% csrf_token %}
-            <p>{% blocktranslate %}Are you sure you want to delete "{{ object }}"?{% endblocktranslate %}</p>
-            <input type="submit" class="button" value="Confirm">
+            <p>{% blocktrans %}Are you sure you want to delete "{{ object }}"?{% endblocktrans %}</p>
+            <input type="submit" class="button" value="{% trans "Confirm" %}">
         </form>
     </div>
 {% endblock %}

@@ -2,9 +2,9 @@
 {% load i18n %}
 {% block title %}
     {% if object %}
-        {% blocktranslate %}
-        Edit course "{{ object.title }}"
-        {% endblocktranslate %}
+        {% blocktrans with title=object.title%}
+        Edit course "{{ title }}"
+        {% endblocktrans %}
     {% else %}
         {% trans "Create a new course" %}
     {% endif %}
@@ -12,9 +12,9 @@
 {% block content %}
     <h1>
         {% if object %}
-            {% blocktranslate %}
-            Edit course "{{ object.title }}"
-            {% endblocktranslate %}
+            {% blocktrans with title=object.title%}
+            Edit course "{{ title }}"
+            {% endblocktrans %}
         {% else %}
             {% trans "Create a new course" %}
         {% endif %}
@@ -24,7 +24,7 @@
         <form action="." method="post">
             {{ form.as_p }}
             {% csrf_token %}
-            <p><input type="submit" value="Save course"></p>
+            <p><input type="submit" value="{% trans "Save course" %}"></p>
         </form>
     </div>
 {% endblock %}
